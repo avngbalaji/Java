@@ -17,3 +17,4 @@ public class bin_dec
         System.out.println("1100 - Decimal Nos is "+bin2dec(1100));
     }
 }
+//git modified check
