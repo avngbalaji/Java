@@ -291,60 +291,172 @@
 
 //TextField with TextListener, ActionListener in Java AWT
 
+//package awtDemo;
+//
+//import java.awt.*;
+//import java.awt.event.*;
+//
+//class MyApp extends Frame{
+//	
+//	TextField txt;
+//	Label l1,l2;
+//	
+//	public MyApp() {
+//		super("Tutor Joes");
+//		setSize(1000,600);
+//		setLayout(null);
+//		setVisible(true);
+//		
+//		txt = new TextField();
+//		txt.setBounds(10,50,250,100);
+//		
+//		l1 = new Label("Label 1111");
+//		l1.setBounds(300, 50, 250, 30);
+//		
+//		l2 = new Label("Label 2222");
+//		l2.setBounds(10,100,250,30);
+//		
+//		add(txt);
+//		add(l1);
+//		add(l2);
+//		
+//		//Close Button Code
+//		this.addWindowListener(new WindowAdapter() {
+//			public void windowClosing(WindowEvent we) {
+//				System.exit(0);
+//			}  
+//		});
+//	}
+//}
+//
+//public class app{
+//	public static void main(String[] args) {
+//		MyApp frm = new MyApp();
+//	}
+//
+//}
+
+//----------------------------------------------------------------
+
+
+
+
+
+//Basic Addition Program
+
+//package awtDemo;
+//
+//import java.awt.*;
+//import java.awt.event.*;
+//
+//class MyApp extends Frame implements ActionListener{
+//	
+//	Label l1,l2,l3;
+//	TextField txt1, txt2;
+//	Button b;
+//	
+//	public MyApp() {
+//		super("Tutor Joes");
+//		setSize(1000,600);//w,h
+//		setLayout(null);
+//		setVisible(true);
+//		
+//		l1 = new Label("Enter the value 1 : ");
+//		l1.setBounds(10,50,100,30);
+//		
+//		txt1 = new TextField();
+//		txt1.setBounds(150, 50, 250, 30);
+//		
+//		l2 = new Label("Enter the value 2 : ");
+//		l2.setBounds(10,100,100,30);
+//		
+//		txt2 = new TextField();
+//		txt2.setBounds(150, 100, 250, 30);
+//		
+//		b = new Button("ADD");
+//		b.setBounds(150, 150, 100, 30);
+//		b.addActionListener(this);
+//		
+//		l3 = new Label("--");
+//		l3.setBounds(10, 200, 300, 30);
+//		
+//		add(l1);add(l2);add(txt1);add(txt2);
+//		add(b);add(l3);
+//		//Close Button Code
+//		this.addWindowListener(new WindowAdapter() {
+//			public void windowClosing(WindowEvent we) {
+//				System.exit(0);
+//			}  
+//		});
+//	}
+//
+//	@Override
+//	public void actionPerformed(ActionEvent e) {
+//		String s1 = txt1.getText();
+//		String s2 = txt2.getText();
+//		
+//		if(s1.isEmpty() || s2.isEmpty()) {
+//			l3.setText("Please Enter the data");
+//		} else {
+//			int a = Integer.parseInt(s1);
+//			int b = Integer.parseInt(s2);
+//			int c = a+b;
+//			String result = String.valueOf(c);
+//			l3.setText("Total : "+result);
+//		}
+//	}
+//}
+//
+//public class app{
+//	public static void main(String[] args) {
+//		MyApp frm = new MyApp();
+//	}
+//
+//}
+
+//----------------------------------------------------------------
+
+
+
+
+
+//Text Area
+
 package awtDemo;
 
 import java.awt.*;
 import java.awt.event.*;
 
-class MyApp extends Frame{
+class MyApp extends Frame implements ActionListener{
 	
-	Label l1,l2;
-	Checkbox c1,c2;
-	CheckboxGroup cbg;
+	TextArea t;
+	Label l;
 	
 	public MyApp() {
 		super("Tutor Joes");
-		setSize(1000,600);
+		setSize(1000,600);//w,h
 		setLayout(null);
 		setVisible(true);
 		
-		cbg = new CheckboxGroup();
+		l = new Label("----");
+		l.setBounds(20, 50, 100, 30);
 		
-		c1 = new Checkbox("Male",cbg,false);
-		c1.setBounds(10,50,250,30);
+		t = new TextArea(10,30);// R,C
+		t.setBounds(20, 100, 300, 200);
 		
-		l1 = new Label("Not Selected");
-		l1.setBounds(300, 50, 600, 30);
-		
-		
-		c2 = new Checkbox("Female",cbg,false);
-		c2.setBounds(10, 100, 250, 30);
-		
-		l2 = new Label("Not Selected");
-		l2.setBounds(300, 100, 600, 30);
-		
-		
-		c1.addItemListener(new ItemListener() {
-			public void itemStateChanged(ItemEvent e) {
-				l1.setText(e.getStateChange()==1?"checked":"unchecked");
-				l2.setText("unchecked");
-			}
-		});
-		
-		c2.addItemListener(new ItemListener() {
-			public void itemStateChanged(ItemEvent e) {
-				l1.setText("unchecked");
-				l2.setText(e.getStateChange()==1?"checked":"unchecked");
-			}
-		});
-		
-		add(c1);add(l1);add(c2);add(l2);
+		add(l);
+		add(t);
 		//Close Button Code
 		this.addWindowListener(new WindowAdapter() {
 			public void windowClosing(WindowEvent we) {
 				System.exit(0);
 			}  
 		});
+	}
+
+	@Override
+	public void actionPerformed(ActionEvent e) {
+		
 	}
 }
 
