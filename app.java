@@ -422,6 +422,77 @@
 
 //Text Area
 
+//package awtDemo;
+//
+//import java.awt.*;
+//import java.awt.event.*;
+//
+//class MyApp extends Frame implements ActionListener{
+//	
+//	TextArea t;
+//	Label l;
+//	TextField tf;
+//	Button b;
+//	
+//	public MyApp() {
+//		super("Tutor Joes");
+//		setSize(600,600);//w,h
+//		setLayout(null);
+//		setVisible(true);
+//		
+//		l = new Label("----");
+//		l.setBounds(20, 50, 250, 30);
+//		
+//		t = new TextArea(10,30);// R,C
+//		t.setBounds(20, 100, 300, 200);
+//		
+//		tf = new TextField(20);
+//		tf.setBounds(20, 350, 300, 30);
+//		
+//		b = new Button("Click");
+//		b.setBounds(20, 400, 300, 30);
+//		b.addActionListener(this);
+//		
+//		add(l);
+//		add(t);
+//		add(tf);
+//		add(b);
+//		//Close Button Code
+//		this.addWindowListener(new WindowAdapter() {
+//			public void windowClosing(WindowEvent we) {
+//				System.exit(0);
+//			}  
+//		});
+//	}
+//
+//	@Override
+//	public void actionPerformed(ActionEvent e) {
+//		//1. It sets the selected text in TextArea to label
+//		l.setText(t.getSelectedText());
+//		
+//		//2. It appends to the TextArea with the TextField content
+//		//t.append(tf.getText());
+//		
+//		//3. It inserts in the TextArea with the TextField content to the cursor position
+//		//t.insert(tf.getText(), t.getCaretPosition());
+//	}
+//}
+//
+//public class app{
+//	public static void main(String[] args) {
+//		MyApp frm = new MyApp();
+//	}
+//
+//}
+
+//----------------------------------------------------------------
+
+
+
+
+
+//Program to count words and characters in Java AWT
+
 package awtDemo;
 
 import java.awt.*;
@@ -431,21 +502,32 @@ class MyApp extends Frame implements ActionListener{
 	
 	TextArea t;
 	Label l;
+	TextField tf;
+	Button b;
 	
 	public MyApp() {
 		super("Tutor Joes");
-		setSize(1000,600);//w,h
+		setSize(600,600);//w,h
 		setLayout(null);
 		setVisible(true);
 		
 		l = new Label("----");
-		l.setBounds(20, 50, 100, 30);
+		l.setBounds(20, 50, 250, 30);
 		
 		t = new TextArea(10,30);// R,C
 		t.setBounds(20, 100, 300, 200);
 		
+		tf = new TextField(20);
+		tf.setBounds(20, 350, 300, 30);
+		
+		b = new Button("Click");
+		b.setBounds(20, 400, 300, 30);
+		b.addActionListener(this);
+		
 		add(l);
 		add(t);
+		add(tf);
+		add(b);
 		//Close Button Code
 		this.addWindowListener(new WindowAdapter() {
 			public void windowClosing(WindowEvent we) {
@@ -456,7 +538,14 @@ class MyApp extends Frame implements ActionListener{
 
 	@Override
 	public void actionPerformed(ActionEvent e) {
+		//1. It sets the selected text in TextArea to label
+		l.setText(t.getSelectedText());
 		
+		//2. It appends to the TextArea with the TextField content
+		//t.append(tf.getText());
+		
+		//3. It inserts in the TextArea with the TextField content to the cursor position
+		//t.insert(tf.getText(), t.getCaretPosition());
 	}
 }
 
