@@ -554,6 +554,150 @@
 
 //Choice in Java AWT - in web development combo box
 
+//package awtDemo;
+//
+//import java.awt.*;
+//import java.awt.event.*;
+//
+//class MyApp extends Frame implements ActionListener{
+//	
+//	Choice c;
+//	Button b;
+//	Label l;
+//	
+//	public MyApp() {
+//		super("Words & Letters Count");
+//		setSize(600,600);//w,h
+//		setLayout(null);
+//		setVisible(true);
+//		
+//		c = new Choice();
+//		c.setBounds(10,50,100,100);
+//		
+//		c.add("C");
+//		c.add("C++");
+//		c.add("Java");
+//		c.add("PHP");
+//		c.add("Android");
+//		
+//		add(c);
+//		
+//		b = new Button("Show Details");
+//		b.setBounds(120, 50, 100, 20);
+//		b.addActionListener(new ActionListener () {
+//			public void actionPerformed(ActionEvent e) {
+//				String data = "Programming language Selected : "+c.getItem(c.getSelectedIndex());
+//				l.setText(data);
+//			}
+//		});
+//		
+//		add(b);
+//		
+//		l = new Label("Empty Label");
+//		l.setBounds(10, 70, 300, 30);
+//		
+//		add(l);
+//		//Close Button Code
+//		this.addWindowListener(new WindowAdapter() {
+//			public void windowClosing(WindowEvent we) {
+//				System.exit(0);
+//			}  
+//		});
+//	}
+//
+//	@Override
+//	public void actionPerformed(ActionEvent e) {
+//		
+//	}
+//}
+//
+//public class app{
+//	public static void main(String[] args) {
+//		MyApp frm = new MyApp();
+//	}
+//
+//}
+
+//----------------------------------------------------------------
+
+
+
+
+
+//List in Java AWT
+
+//package awtDemo;
+//
+//import java.awt.*;
+//import java.awt.event.*;
+//
+//class MyApp extends Frame implements ActionListener{
+//	
+//	List lst;
+//	Button btn;
+//	Label lbl;
+//	
+//	public MyApp() {
+//		super("Words & Letters Count");
+//		setSize(600,600);//w,h
+//		setLayout(null);
+//		setVisible(true);
+//		
+//		lst = new List(1,true);//1.scroll count 2.false-single choice / true-multi choice
+//		lst.setBounds(10, 50, 100, 100);
+//		lst.add("Mercury");
+//		lst.add("Venus");
+//		lst.add("Earth");
+//		lst.add("Mars");
+//		lst.add("Jupiter");
+//		lst.add("Saturn");
+//		lst.add("Uranus");
+//		lst.add("Neptune");
+//		lst.add("Pluto");
+//		
+//		btn = new Button("Show Details");
+//		btn.setBounds(10, 170, 100, 30);
+//		btn.addActionListener(this);
+//		
+//		lbl = new Label("Empty Label");
+//		lbl.setBounds(200, 170, 300, 30);
+//		
+//		add(lst);add(btn);add(lbl);
+//		
+//		//Close Button Code
+//		this.addWindowListener(new WindowAdapter() {
+//			public void windowClosing(WindowEvent we) {
+//				System.exit(0);
+//			}  
+//		});
+//	}
+//
+//	@Override
+//	public void actionPerformed(ActionEvent e) {
+//		String list[] = lst.getSelectedItems();
+//		String data = "Selected Planet : ";
+//		
+//		for(String x : list)
+//			data += x +" , ";
+//		lbl.setText(data);
+//	}
+//}
+//
+//public class app{
+//	public static void main(String[] args) {
+//		MyApp frm = new MyApp();
+//	}
+//
+//}
+
+//----------------------------------------------------------------
+
+
+
+
+
+//Canvas in Java AWT
+
 package awtDemo;
 
 import java.awt.*;
@@ -561,9 +705,9 @@ import java.awt.event.*;
 
 class MyApp extends Frame implements ActionListener{
 	
-	Label l1,l2;
-	TextArea t;
-	Button b;
+	List lst;
+	Button btn;
+	Label lbl;
 	
 	public MyApp() {
 		super("Words & Letters Count");
@@ -571,17 +715,26 @@ class MyApp extends Frame implements ActionListener{
 		setLayout(null);
 		setVisible(true);
 		
-		l1=new Label("-------");
-		l1.setBounds(20,30,200,20);
-		l2=new Label("-------");
-		l2.setBounds(20,60,200,20);
-		t=new TextArea(10,30);
-		t.setBounds(20, 100, 300, 200);
-		b=new Button("Get Details");
-		b.setBounds(20, 320, 100, 30);
-		b.addActionListener(this);
+		lst = new List(1,true);//1.scroll count 2.false-single choice / true-multi choice
+		lst.setBounds(10, 50, 100, 100);
+		lst.add("Mercury");
+		lst.add("Venus");
+		lst.add("Earth");
+		lst.add("Mars");
+		lst.add("Jupiter");
+		lst.add("Saturn");
+		lst.add("Uranus");
+		lst.add("Neptune");
+		lst.add("Pluto");
 		
-		add(l1);add(l2);add(t);add(b);
+		btn = new Button("Show Details");
+		btn.setBounds(10, 170, 100, 30);
+		btn.addActionListener(this);
+		
+		lbl = new Label("Empty Label");
+		lbl.setBounds(200, 170, 300, 30);
+		
+		add(lst);add(btn);add(lbl);
 		
 		//Close Button Code
 		this.addWindowListener(new WindowAdapter() {
@@ -593,10 +746,12 @@ class MyApp extends Frame implements ActionListener{
 
 	@Override
 	public void actionPerformed(ActionEvent e) {
-		String text = t.getText();
-		String words[] = text.split("\\s");
-		l1.setText("Words : "+words.length);
-		l2.setText("Characters : "+text.length());
+		String list[] = lst.getSelectedItems();
+		String data = "Selected Planet : ";
+		
+		for(String x : list)
+			data += x +" , ";
+		lbl.setText(data);
 	}
 }
 
