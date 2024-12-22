@@ -566,7 +566,7 @@
 //	Label l;
 //	
 //	public MyApp() {
-//		super("Words & Letters Count");
+//		super("Choice in Java AWT");
 //		setSize(600,600);//w,h
 //		setLayout(null);
 //		setVisible(true);
@@ -638,7 +638,7 @@
 //	Label lbl;
 //	
 //	public MyApp() {
-//		super("Words & Letters Count");
+//		super("List in Java AWT");
 //		setSize(600,600);//w,h
 //		setLayout(null);
 //		setVisible(true);
@@ -698,43 +698,189 @@
 
 //Canvas in Java AWT
 
+//package awtDemo;
+//
+//import java.awt.*;
+//import java.awt.event.*;
+//
+//class MyCanvas extends Canvas{
+//	
+//	public MyCanvas() {
+//		setBackground(Color.GRAY);
+//		setSize(300,200);
+//	}
+//	
+//	public void paint(Graphics g) {
+//		g.setColor(Color.red);
+//		g.fillOval(75, 75, 150, 75);
+//	}
+//}
+//
+//class MyApp extends Frame{
+//	
+//	
+//	
+//	public MyApp() {
+//		super("Canvas");
+//		setSize(600,600);//w,h
+//		setLayout(null);
+//		setVisible(true);
+//		
+//		add(new MyCanvas());
+//		
+//		//Close Button Code
+//		this.addWindowListener(new WindowAdapter() {
+//			public void windowClosing(WindowEvent we) {
+//				System.exit(0);
+//			}  
+//		});
+//	}
+//}
+//
+//public class app{
+//	public static void main(String[] args) {
+//		MyApp frm = new MyApp();
+//	}
+//
+//}
+
+//----------------------------------------------------------------
+
+
+
+
+
+//MenuBar, Menu, MenuItem in Java AWT
+
+//package awtDemo;
+//
+//import java.awt.*;
+//import java.awt.event.*;
+//
+//class MyApp extends Frame{
+//	
+//	public MyApp() {
+//		super("MenuBar, Menu, MenuItem");
+//		setSize(600,600);//w,h
+//		setLayout(null);
+//		setVisible(true);
+//
+//		MenuBar m = new MenuBar();
+//		Menu menu = new Menu("Menu");
+//		Menu submenu = new Menu("Sub Menu");
+//		MenuItem i1 = new MenuItem("Item 1");
+//		MenuItem i2 = new MenuItem("Item 2");
+//		MenuItem i3 = new MenuItem("Item 3");
+//		MenuItem i4 = new MenuItem("Item 4");
+//		MenuItem i5 = new MenuItem("Item 5");
+//		
+//		menu.add(i1);
+//		menu.add(i2);
+//		menu.add(i3);
+//		menu.add(submenu);
+//		
+//		submenu.add(i4);
+//		submenu.add(i5);
+//		
+//		m.add(menu);
+//		
+//		setMenuBar(m);
+//		
+//		//Close Button Code
+//		this.addWindowListener(new WindowAdapter() {
+//			public void windowClosing(WindowEvent we) {
+//				System.exit(0);
+//			}  
+//		});
+//	}
+//}
+//
+//public class app{
+//	public static void main(String[] args) {
+//		MyApp frm = new MyApp();
+//	}
+//
+//}
+
+//----------------------------------------------------------------
+
+
+
+
+
+//Panel in Java AWT
+
+//package awtDemo;
+//
+//import java.awt.*;
+//import java.awt.event.*;
+//
+//class MyApp extends Frame{
+//	
+//	public MyApp() {
+//		super("Panel");
+//		setSize(600,600);//w,h
+//		setLayout(null);
+//		setVisible(true);
+//
+//		Panel panel = new Panel();
+//		panel.setBounds(40, 80, 200, 200);
+//		panel.setBackground(Color.gray);
+//		
+//		Button b1 = new Button("Button 1");
+//		b1.setBounds(50, 100, 80, 30);
+//		b1.setBackground(Color.yellow);
+//		
+//		Button b2 = new Button("Button 2");
+//		b2.setBounds(100, 100, 80, 30);
+//		b2.setBackground(Color.green);
+//		
+//		panel.add(b1);
+//		panel.add(b2);
+//		
+//		add(panel);
+//		
+//		//Close Button Code
+//		this.addWindowListener(new WindowAdapter() {
+//			public void windowClosing(WindowEvent we) {
+//				System.exit(0);
+//			}  
+//		});
+//	}
+//}
+//
+//public class app{
+//	public static void main(String[] args) {
+//		MyApp frm = new MyApp();
+//	}
+//
+//}
+
+//----------------------------------------------------------------
+//----------------------------------------------------------------
+
+
+
+
+
+//Simple Registration Form in Java AWT
+
 package awtDemo;
 
 import java.awt.*;
 import java.awt.event.*;
 
-class MyApp extends Frame implements ActionListener{
+class MyApp extends Frame{
 	
-	List lst;
-	Button btn;
-	Label lbl;
+	
 	
 	public MyApp() {
-		super("Words & Letters Count");
+		super("Panel");
 		setSize(600,600);//w,h
 		setLayout(null);
 		setVisible(true);
+
 		
-		lst = new List(1,true);//1.scroll count 2.false-single choice / true-multi choice
-		lst.setBounds(10, 50, 100, 100);
-		lst.add("Mercury");
-		lst.add("Venus");
-		lst.add("Earth");
-		lst.add("Mars");
-		lst.add("Jupiter");
-		lst.add("Saturn");
-		lst.add("Uranus");
-		lst.add("Neptune");
-		lst.add("Pluto");
-		
-		btn = new Button("Show Details");
-		btn.setBounds(10, 170, 100, 30);
-		btn.addActionListener(this);
-		
-		lbl = new Label("Empty Label");
-		lbl.setBounds(200, 170, 300, 30);
-		
-		add(lst);add(btn);add(lbl);
 		
 		//Close Button Code
 		this.addWindowListener(new WindowAdapter() {
@@ -742,16 +888,6 @@ class MyApp extends Frame implements ActionListener{
 				System.exit(0);
 			}  
 		});
-	}
-
-	@Override
-	public void actionPerformed(ActionEvent e) {
-		String list[] = lst.getSelectedItems();
-		String data = "Selected Planet : ";
-		
-		for(String x : list)
-			data += x +" , ";
-		lbl.setText(data);
 	}
 }
 
