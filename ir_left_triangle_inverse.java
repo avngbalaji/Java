@@ -1,6 +1,6 @@
 import java.lang.*;
 
-class ir_left_triangle
+class ir_left_triangle_inverse
 {
 	public static void main(String[] args)
 	{
@@ -8,12 +8,12 @@ class ir_left_triangle
 		
 		for(int i=1,p=1; i<=n; i++,p++)
 		{
-			for(int j=i; j<=n; j++)
+			for(int j=1; j<=i; j++)
 			{
 				System.out.print("  ");
 			}
 			
-			for(int j=1; j<=i; j++)
+			for(int j=i; j<=n; j++)
 			{
 				System.out.print(p+" ");
 			}
